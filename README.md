@@ -41,6 +41,8 @@ Shopzone is a modern e-commerce application built with React and Vite, featuring
     npm run build
     ```
 
+    
+
 ## Project Structure
 
 - `src/components`: Reusable UI components (Navbar, Footer, etc.)
