@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import { ShoppingBag, ShoppingCart, User } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
@@ -12,9 +13,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          🛍️ ShopZone
+          <ShoppingBag className="icon-logo" /> ShopZone
         </Link>
-
         <ul className="navbar-menu">
           <li>
             <NavLink
@@ -49,13 +49,13 @@ const Navbar = () => {
               `cart-icon ${isActive ? 'active' : ''}`
             }
           >
-            🛒
+            <ShoppingCart />
             {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </NavLink>
 
           {isAuthenticated ? (
             <div className="user-menu">
-              <span className="user-name">👤 {user?.username}</span>
+              <span className="user-name"><User size={18} /> {user?.username}</span>
               <button onClick={logout} className="logout-button">
                 Logout
               </button>

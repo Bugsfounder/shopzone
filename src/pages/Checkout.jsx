@@ -10,9 +10,9 @@ const Checkout = () => {
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    
+
     // Simulate order placement
-    alert('Order placed successfully! 🎉\n\nThank you for shopping with ShopZone!');
+    alert('Order placed successfully!\n\nThank you for shopping with ShopZone!');
     clearCart();
     navigate('/');
   };

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -24,7 +25,7 @@ const Contact = () => {
     // In a real app, you would send this data to a backend
     console.log('Form submitted:', formData);
     setSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -49,7 +50,7 @@ const Contact = () => {
 
           <div className="info-items">
             <div className="info-item">
-              <span className="icon">📧</span>
+              <span className="icon"><Mail /></span>
               <div>
                 <h3>Email</h3>
                 <p>support@shopzone.com</p>
@@ -57,7 +58,7 @@ const Contact = () => {
             </div>
 
             <div className="info-item">
-              <span className="icon">📞</span>
+              <span className="icon"><Phone /></span>
               <div>
                 <h3>Phone</h3>
                 <p>+1 (555) 123-4567</p>
@@ -65,7 +66,7 @@ const Contact = () => {
             </div>
 
             <div className="info-item">
-              <span className="icon">📍</span>
+              <span className="icon"><MapPin /></span>
               <div>
                 <h3>Address</h3>
                 <p>123 Shopping Street, Commerce City, CC 12345</p>
@@ -73,7 +74,7 @@ const Contact = () => {
             </div>
 
             <div className="info-item">
-              <span className="icon">🕐</span>
+              <span className="icon"><Clock /></span>
               <div>
                 <h3>Business Hours</h3>
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
@@ -87,7 +88,7 @@ const Contact = () => {
         <div className="contact-form-container">
           {submitted && (
             <div className="success-message">
-              Thank you for your message! We'll get back to you soon. 🎉
+              Thank you for your message! We'll get back to you soon.
             </div>
           )}
 

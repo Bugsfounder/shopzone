@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Star, ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './Product.css';
 
@@ -7,7 +8,7 @@ const Product = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  
+
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -61,9 +62,9 @@ const Product = () => {
   return (
     <div className="product-page">
       {showNotification && (
-        <div className="notification">Added to cart successfully! 🎉</div>
+        <div className="notification">Added to cart successfully!</div>
       )}
-      
+
       <button onClick={() => navigate('/shop')} className="back-link">
         ← Back to Shop
       </button>
@@ -96,7 +97,7 @@ const Product = () => {
           </div>
 
           <div className="product-rating-section">
-            <span className="rating">⭐ {product.rating.toFixed(1)}</span>
+            <span className="rating"><Star size={20} fill="currentColor" /> {product.rating.toFixed(1)}</span>
             <span className="stock-info">
               {product.stock > 0 ? (
                 <span className="in-stock">In Stock ({product.stock} available)</span>
@@ -148,7 +149,7 @@ const Product = () => {
             className="add-to-cart-button"
             disabled={product.stock === 0}
           >
-            {product.stock > 0 ? '🛒 Add to Cart' : 'Out of Stock'}
+            {product.stock > 0 ? <><ShoppingCart size={20} /> Add to Cart</> : 'Out of Stock'}
           </button>
         </div>
       </div>
@@ -161,7 +162,7 @@ const Product = () => {
               <div key={index} className="review-card">
                 <div className="review-header">
                   <strong>{review.reviewerName}</strong>
-                  <span className="review-rating">⭐ {review.rating}</span>
+                  <span className="review-rating"><Star size={14} fill="currentColor" /> {review.rating}</span>
                 </div>
                 <p className="review-comment">{review.comment}</p>
                 <span className="review-date">

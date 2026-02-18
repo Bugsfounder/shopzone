@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Star } from 'lucide-react';
 import './Shop.css';
 
 const Shop = () => {
@@ -60,7 +61,7 @@ const Shop = () => {
   return (
     <div className="shop">
       <h1>Shop Our Products</h1>
-      
+
       <div className="filters">
         <input
           type="text"
@@ -69,7 +70,7 @@ const Shop = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="search-input"
         />
-        
+
         <select
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
@@ -107,7 +108,7 @@ const Shop = () => {
               <h3>{product.title}</h3>
               <p className="product-category">{product.category}</p>
               <div className="product-rating">
-                ⭐ {product.rating.toFixed(1)}
+                <Star size={16} fill="currentColor" /> {product.rating.toFixed(1)}
               </div>
               <div className="product-price">
                 <span className="price">${product.price}</span>

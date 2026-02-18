@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ShoppingBag, DollarSign, Truck } from 'lucide-react';
 import './Home.css';
 
 const Home = () => {
@@ -15,18 +16,18 @@ const Home = () => {
           Start Shopping
         </Link>
       </div>
-      
+
       <div className="features">
         <div className="feature-card">
-          <h3>🛍️ Wide Selection</h3>
+          <h3><ShoppingBag className="feature-icon" /> Wide Selection</h3>
           <p>Browse hundreds of products across various categories</p>
         </div>
         <div className="feature-card">
-          <h3>💰 Best Prices</h3>
+          <h3><DollarSign className="feature-icon" /> Best Prices</h3>
           <p>Competitive pricing on all our products</p>
         </div>
         <div className="feature-card">
-          <h3>🚀 Fast Delivery</h3>
+          <h3><Truck className="feature-icon" /> Fast Delivery</h3>
           <p>Quick and reliable shipping to your doorstep</p>
         </div>
       </div>

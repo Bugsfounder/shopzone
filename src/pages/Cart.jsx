@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './Cart.css';
 
@@ -9,7 +10,7 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <div className="empty-cart">
-        <div className="empty-cart-icon">🛒</div>
+        <div className="empty-cart-icon"><ShoppingCart size={64} /></div>
         <h2>Your cart is empty</h2>
         <p>Add some products to get started!</p>
         <Link to="/shop" className="shop-now-button">
@@ -77,7 +78,7 @@ const Cart = () => {
 
         <div className="cart-summary">
           <h2>Order Summary</h2>
-          
+
           <div className="summary-row">
             <span>Items ({cart.reduce((sum, item) => sum + item.quantity, 0)})</span>
             <span>${getCartTotal().toFixed(2)}</span>
